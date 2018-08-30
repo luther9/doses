@@ -1,5 +1,3 @@
-#import pytest
-
 from doses import main
 
 
@@ -17,11 +15,6 @@ def test_nonNumberArg():
   assert main(('', 'word'), environ) == 2
 
 
-def test_noHome():
-  """Return None even if there's no HOME environment variable."""
-  assert main(argv, {}) is None
-
-
-def test_normal():
-  """Return None in normal conditions."""
-  assert main(argv, environ) is None
+def test_noDataFile():
+  """Return an error message when there's no mydoses.py file."""
+  assert main(argv, environ) == "Can't find mydoses.py in home directory."
