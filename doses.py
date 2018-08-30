@@ -52,7 +52,7 @@ def main(argv, environ):
     print('doses takes one numerical argument', file=stderr)
     return 2
   for day in estimateLevels(retention, mydoses.doses):
-    print(f'{day[0]} {day[1]:4} {day[2]}')
+    print(f'{day[0]} {day[1]:<4} {day[2]}')
 
 
 if __name__ == '__main__':
