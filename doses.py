@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# 2018 Luther Thompson
+# This program is public domain. See COPYING for details.
+
 import datetime
 import os
 import sys
