@@ -9,8 +9,10 @@ def main(argv, environ):
     print(float(argv[1]))
   except (IndexError, ValueError):
     print('doses takes one numerical argument', file=stderr)
-    return 1
-  print(environ['HOME'])
+    return 2
+  home = environ.get('HOME', None)
+  fileName = (home + '/' if home else '') + 'mydoses.scm'
+  print(fileName)
 
 
 if __name__ == '__main__':
