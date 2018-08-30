@@ -20,3 +20,8 @@ def test_nonNumberArg():
 def test_noHome():
   """Return None even if there's no HOME environment variable."""
   assert main(argv, {}) is None
+
+
+def test_normal():
+  """Return None in normal conditions."""
+  assert main(argv, environ) is None
