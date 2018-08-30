@@ -54,6 +54,7 @@ def main(argv, environ):
   except (IndexError, ValueError):
     print('doses takes one numerical argument', file=stderr)
     return 2
+  print('Limit:', 1 / (1 - retention))
   for day in estimateLevels(retention, mydoses.doses):
     print(f'{day[0]} {day[1]:<4} {day[2]:.3}')
 
