@@ -54,7 +54,11 @@ def main(argv, environ):
   except (IndexError, ValueError):
     print('doses takes one numerical argument', file=sys.stderr)
     return 2
-  print('Limit:', 1 / (1 - retention))
+  try:
+    limit = 1 / (1 - retention)
+  except ZeroDivisionError:
+    limit = 'infinity'
+  print('Limit:', limit)
   for day in estimateLevels(retention, mydoses.doses):
     print(f'{day[0]} {day[1]:<4} {day[2]:.3}')
 
