@@ -52,7 +52,7 @@ def main(argv, environ):
   try:
     retention = float(argv[1])
   except (IndexError, ValueError):
-    print('doses takes one numerical argument', file=stderr)
+    print('doses takes one numerical argument', file=sys.stderr)
     return 2
   print('Limit:', 1 / (1 - retention))
   for day in estimateLevels(retention, mydoses.doses):
@@ -60,4 +60,4 @@ def main(argv, environ):
 
 
 if __name__ == '__main__':
-  exit(main(sys.argv, os.environ))
+  sys.exit(main(sys.argv, os.environ))
