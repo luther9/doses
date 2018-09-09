@@ -58,7 +58,7 @@ def main(argv, environ):
     limit = 1 / (1 - retention)
   except ZeroDivisionError:
     limit = 'infinity'
-  print('Limit:', limit)
+  print(f'Limit: dose * {limit:.3}')
   for day in estimateLevels(retention, mydoses.doses):
     print(f'{day[0]} {day[1]:<4} {day[2]:.3}')
 
